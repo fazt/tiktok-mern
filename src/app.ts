@@ -1,10 +1,16 @@
 import express from "express";
 import fileUpload from "express-fileupload";
 import videoRoutes from "./routes/videos.routes";
+import cors from "cors";
 import path from "path";
 
 const app = express();
 
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+  })
+);
 app.use(
   fileUpload({
     tempFileDir: "./uploads",
