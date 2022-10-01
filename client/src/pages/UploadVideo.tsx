@@ -1,5 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
+import { Input } from "../components/Input";
+import Button from "../components/Button";
 
 interface TiktokPost {
   title: string;
@@ -45,19 +47,8 @@ function UploadVideoPage() {
           }
         }}
       >
-        <input
-          type="text"
-          name="title"
-          placeholder="title"
-          onChange={handleChange}
-        />
-
-        <textarea
-          name="description"
-          rows={3}
-          placeholder="write a description"
-          onChange={handleChange}
-        ></textarea>
+        <Input name="title" onChange={handleChange} />
+        <Input type="textarea" name="description" onChange={handleChange} />
 
         <input
           type="file"
@@ -70,8 +61,7 @@ function UploadVideoPage() {
             })
           }
         />
-
-        <button>Upload</button>
+        <Button>Upload</Button>
       </form>
     </div>
   );

@@ -1,8 +1,10 @@
 import express from "express";
 import fileUpload from "express-fileupload";
-import videoRoutes from "./routes/videos.routes";
 import cors from "cors";
 import path from "path";
+
+import videoRoutes from "./routes/videos.routes";
+import authRoutes from "./routes/auth.routes";
 
 const app = express();
 
@@ -11,6 +13,8 @@ app.use(
     origin: "http://localhost:5173",
   })
 );
+
+app.use(express.json());
 app.use(
   fileUpload({
     tempFileDir: "./uploads",
@@ -21,6 +25,7 @@ app.use(
 );
 
 app.use(videoRoutes);
+app.use(authRoutes);
 
 console.log(path.join(__dirname, "../uploads"));
 
