@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev src/index.ts"
+    "dev": "ts-node-dev server/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "build:front": "npm i --prefix client && npm run build --prefix client"
   },
   "keywords": [],
   "author": "",

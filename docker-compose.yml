@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  server:
+    image: node
+    build: .
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
+    command: npm run dev
+  database:
+    image: mongo
+    container_name: tiktokdb
+    ports:
+      - 27017:27017
+

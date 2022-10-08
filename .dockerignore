@@ -1,0 +1,5 @@
+node_modules
+requests
+uploads
+client/node_modules
+dist

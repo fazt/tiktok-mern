@@ -4,6 +4,10 @@ import TiktokModel from "../models/tiktok.model";
 
 const router = Router();
 
+router.get("/ping", (req, res) => {
+  res.send("pong");
+});
+
 router.get("/videos", async (req, res) => {
   const tiktoks = await tiktokModel.find();
   res.json(tiktoks);

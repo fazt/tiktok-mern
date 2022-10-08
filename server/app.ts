@@ -27,8 +27,12 @@ app.use(
 app.use(videoRoutes);
 app.use(authRoutes);
 
-console.log(path.join(__dirname, "../uploads"));
-
 app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
+
+app.use(express.static(path.join(__dirname, "../client/dist")));
+
+app.get('*', function (request, response) {
+  response.sendFile(path.resolve(__dirname, '../client/dist/index.html'));
+});
 
 export default app;
