@@ -1,0 +1,14 @@
+@api = https://fazt-tiktok-mern-7vrj6x774wjf4g-3000.githubpreview.dev
+
+### GET request
+GET {{api}}
+
+### Signup
+POST {{api}}/signup
+Content-Type: application/json
+
+{
+    "email": "cesarmartinez@gmail.com",
+    "password": "cesar123",
+    "confirmPassword": "cesar123"
+}
